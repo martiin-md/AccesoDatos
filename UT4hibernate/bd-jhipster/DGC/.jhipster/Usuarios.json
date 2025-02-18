@@ -1,0 +1,66 @@
+{
+  "annotations": {
+    "changelogDate": "20250122090930"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "dni",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "telefono",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "direccion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fechaRegistro",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fechaUltimoAcceso",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "contrasena",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "esadministracion",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Usuarios",
+  "relationships": [
+    {
+      "otherEntityName": "alegaciones",
+      "otherEntityRelationshipName": "usuario",
+      "relationshipName": "alegaciones",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "proyectos",
+      "otherEntityRelationshipName": "usuariosFavoritos",
+      "relationshipName": "proyectosFavoritos",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

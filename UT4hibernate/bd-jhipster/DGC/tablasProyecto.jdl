@@ -1,0 +1,76 @@
+entity Proyectos {
+    nombre String required
+    descripcion String
+    fecha Instant
+    fase FaseProyecto
+    completado Boolean
+    
+}
+
+//Tabla Usuario
+entity Usuarios {
+    nombre String required
+    email String required unique
+    dni String unique
+    telefono String
+    direccion String
+    fechaRegistro Instant
+    fechaUltimoAcceso Instant
+    contrasena String required
+    esadministracion Boolean
+    
+}
+
+// tabla Alegacion
+entity Alegaciones {
+	titulo String required
+	fechaPresentacion Instant required
+    descripcion String
+    estado EstadoAlegacion
+}
+//Tabla GestoresDGC
+entity GestorsDGC {
+    nombre String required
+    email String required unique
+    telefono String
+    contrasena String required
+    numeroInformes Integer
+}
+// Tabla Informe
+entity Informe{
+    titulo String required
+    fecha Instant required
+    archivoURL String required
+
+}
+
+// Relaciones uno a muchos
+relationship OneToMany {
+	Proyectos {alegaciones} to Alegaciones {proyecto}
+    Usuarios {alegaciones} to Alegaciones {usuario}
+    GestorsDGC {proyectos} to Proyectos {gestor} 
+    Proyectos {informes} to Informe{proyecto} 
+}
+// Relaciones muchos a uno
+relationship ManyToOne {
+    Informe {usuario} to Usuarios
+}
+
+//Relacion de Favoritos(Opcional)
+relationship ManyToMany {
+    Usuarios {proyectosFavoritos} to Proyectos {usuariosFavoritos}
+}
+
+enum FaseProyecto{
+	INICIO String
+    PLANIFICACION String
+    EJECUCION String
+    CIERRE String
+}
+
+enum EstadoAlegacion{
+    ACEPTADA String
+    REVISION String
+    RECHAZADA String
+    CERRADA String
+}

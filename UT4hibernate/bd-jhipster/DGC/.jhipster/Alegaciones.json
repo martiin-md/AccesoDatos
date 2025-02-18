@@ -1,0 +1,45 @@
+{
+  "annotations": {
+    "changelogDate": "20250122090926"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "titulo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fechaPresentacion",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estado",
+      "fieldType": "EstadoAlegacion",
+      "fieldValues": "ACEPTADA,String,REVISION,RECHAZADA,CERRADA"
+    }
+  ],
+  "name": "Alegaciones",
+  "relationships": [
+    {
+      "otherEntityName": "proyectos",
+      "otherEntityRelationshipName": "alegaciones",
+      "relationshipName": "proyecto",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "usuarios",
+      "otherEntityRelationshipName": "alegaciones",
+      "relationshipName": "usuario",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

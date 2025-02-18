@@ -1,0 +1,40 @@
+{
+  "annotations": {
+    "changelogDate": "20250122090928"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "titulo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fecha",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "archivoURL",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Informe",
+  "relationships": [
+    {
+      "otherEntityName": "usuarios",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "proyectos",
+      "otherEntityRelationshipName": "informes",
+      "relationshipName": "proyecto",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,62 @@
+{
+  "annotations": {
+    "changelogDate": "20250122090929"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fecha",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fase",
+      "fieldType": "FaseProyecto",
+      "fieldValues": "INICIO,String,PLANIFICACION,EJECUCION,CIERRE"
+    },
+    {
+      "fieldName": "completado",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Proyectos",
+  "relationships": [
+    {
+      "otherEntityName": "alegaciones",
+      "otherEntityRelationshipName": "proyecto",
+      "relationshipName": "alegaciones",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "informe",
+      "otherEntityRelationshipName": "proyecto",
+      "relationshipName": "informes",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "gestorsDGC",
+      "otherEntityRelationshipName": "proyectos",
+      "relationshipName": "gestor",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "usuarios",
+      "otherEntityRelationshipName": "proyectosFavoritos",
+      "relationshipName": "usuariosFavoritos",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,43 @@
+{
+  "annotations": {
+    "changelogDate": "20250122090927"
+  },
+  "applications": "*",
+  "entityTableName": "gestors_dgc",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "telefono",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contrasena",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "numeroInformes",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "GestorsDGC",
+  "relationships": [
+    {
+      "otherEntityName": "proyectos",
+      "otherEntityRelationshipName": "gestor",
+      "relationshipName": "proyectos",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}
