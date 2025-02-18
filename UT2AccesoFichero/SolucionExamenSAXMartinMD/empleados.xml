@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<empleados>
+    <empleado>
+        <nombre>Laura García</nombre>
+        <puesto>Gerente de Ventas</puesto>
+        <departamento>Ventas</departamento>
+        <salario>50000 USD</salario>
+        <fecha_contratacion>2020-01-15</fecha_contratacion>
+        <email>laura.garcia@empresa.com</email>
+        <telefono>555-2345</telefono>
+        <supervisor>Carlos Méndez</supervisor>
+    </empleado>
+
+    <empleado email="mar@gmail.com" fecha_contratacion="2024-10-22" supervisor="Jose" telefono="644313653" departamento="mercado industrial" salario="7000">
+        <nombre>Martin1</nombre>
+        <puesto>Analizador</puesto>
+    </empleado>
+    
+    <empleado email="martin@gmail.com" fecha_contratacion="2024-10-22" supervisor="Jose" telefono="644313651" departamento="administrativo" salario="3100">
+        <nombre>Martin</nombre>
+        <puesto>Gerente</puesto>
+    </empleado>
+    
+<empleado email="fran@gmail.com" fecha_contratacion="23/10/2024" supervisor="martin" telefono="644315534" departamento="ventas" salario="2000">
+    <nombre>francisco</nombre>
+    <puesto>jefe ventas</puesto>
+</empleado>
+</empleados>
